@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 
@@ -25,11 +24,13 @@ public class Commandflyspeed extends BaseCommand{
 					speed = 1.0F; 
 				}
 			} catch (NumberFormatException e){
-				player.sendMessage(ChatColor.RED + "Enter a valid integer!");
+				player.sendMessage(formatError("Enter a valid integer!"));
 				return;
 			}
 			
 			player.setFlySpeed(speed);
+			
+			player.sendMessage(formatMessage("Your flight speed has been changed to " + speed + "!"));
 		}
 	}
 }

@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -17,7 +16,7 @@ public class Commandenchant extends BaseCommand{
 	@Override
 	public void Run(Player player, Server server, String[] args){
 		if(args.length == 0) {
-			String msg = ChatColor.YELLOW + "Sword Enchantments: ";
+			String msg = "Sword Enchantments: ";
 			
 			for(int i = 0; i < Enchantment.values().length; i++){
 				Enchantment type = Enchantment.values()[i];
@@ -29,32 +28,37 @@ public class Commandenchant extends BaseCommand{
 				}
 			}
 			
-			player.sendMessage(msg);
+			player.sendMessage(formatMessage(msg));
 		} else if(args.length == 1){
-			if(args[0].equalsIgnoreCase("table")){
-				player.openEnchanting(player.getLocation(), true);
-				
+			Enchantment ench = Enchantment.getByName(args[0].toUpperCase());
+			
+			if(ench == null){
+				player.sendMessage(formatError("That enchantment does not exist!"));
 				return;
 			}
 			
-			Enchantment ench = Enchantment.getByName(args[0].toUpperCase());
 			int level = ench.getMaxLevel();
 			
 			if(!ench.canEnchantItem(player.getItemInHand())){
-				player.sendMessage(ChatColor.RED + "You can't enchant that item with that enchant!");
+				player.sendMessage(formatError("You can't enchant that item with that enchant!"));
 				return;
 			}
 			
 			player.getItemInHand().addEnchantment(ench, level);
-			player.sendMessage(ChatColor.YELLOW + "You enchanted your item with " + ench.getName() + "!");
+			player.sendMessage(formatMessage("You enchanted your item with " + ench.getName() + "!"));
 		} else if(args.length == 2) {
 			Enchantment ench = Enchantment.getByName(args[0].toUpperCase());
 			int level;
 			
+			if(ench == null){
+				player.sendMessage(formatError("That enchantment does not exist!"));
+				return;
+			}
+			
 			try{
 				level = Integer.valueOf(args[1]);
 			} catch(NumberFormatException ex){
-				player.sendMessage(ChatColor.RED + "Enter a valid level!");
+				player.sendMessage(formatError("Enter a valid level!"));
 				return;
 			}
 			
@@ -62,12 +66,12 @@ public class Commandenchant extends BaseCommand{
 				level = ench.getMaxLevel();
 			
 			if(!ench.canEnchantItem(player.getItemInHand())){
-				player.sendMessage(ChatColor.RED + "You can't enchant that item with that enchant!");
+				player.sendMessage(formatError("You can't enchant that item with that enchant!"));
 				return;
 			}
 			
 			player.getItemInHand().addEnchantment(ench, level);
-			player.sendMessage(ChatColor.YELLOW + "You enchanted your item with " + ench.getName() + "!");
+			player.sendMessage(formatMessage("You enchanted your item with " + ench.getName() + "!"));
 		}
 	}
 }

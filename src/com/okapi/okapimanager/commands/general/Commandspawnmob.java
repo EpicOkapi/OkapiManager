@@ -41,7 +41,7 @@ public class Commandspawnmob extends BaseCommand{
 			loc.setY(loc.getY() + 1);
 			
 			w.spawnEntity(loc, type);
-			player.sendMessage(ChatColor.YELLOW + "You have spawned a " + type.getName() + "!");
+			player.sendMessage(ChatColor.YELLOW + "You have spawned a " + type.getEntityClass().getName() + "!");
 		} else if(args.length == 2){
 			World w = player.getWorld();
 			EntityType type = MobAPI.StringToEntity(args[0]);
@@ -74,7 +74,7 @@ public class Commandspawnmob extends BaseCommand{
 				w.spawnEntity(loc, type);
 			}
 			
-			player.sendMessage(ChatColor.YELLOW + "You have spawned " + amount + type.getName() + "!");
+			player.sendMessage(ChatColor.YELLOW + "You have spawned " + amount + type.getEntityClass().getName() + "!");
 		}
 	}
 }

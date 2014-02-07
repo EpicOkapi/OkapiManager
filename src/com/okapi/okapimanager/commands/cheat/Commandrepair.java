@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -18,12 +17,14 @@ public class Commandrepair extends BaseCommand{
 	public void Run(Player player, Server server, String[] args){
 		if(args.length == 0){
 			player.getItemInHand().setDurability(player.getItemInHand().getType().getMaxDurability());
-			player.sendMessage(ChatColor.YELLOW + "Your item has been repaired!");
+			player.sendMessage(formatMessage("Your item has been repaired!"));
 		} else if(args.length == 1){
 			if(args[0].equalsIgnoreCase("all")){
 				for(ItemStack item : player.getInventory().getContents()){
 					item.setDurability(item.getType().getMaxDurability());
 				}
+				
+				player.sendMessage(formatMessage("All items in your inventory have been repaired!"));
 			}
 		}
 		

@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.block.Block;
@@ -21,7 +20,7 @@ public class Commandbreak extends BaseCommand{
 		
 		if(block.getType() == Material.BEDROCK){
 			if(!player.hasPermission("okapimanager.cheats.break.bedrock")){
-				player.sendMessage(ChatColor.RED + "You don't have permission to do that!");
+				player.sendMessage(formatError("You need permission to break bedrock!"));
 				return;
 			}
 		}

@@ -1,6 +1,7 @@
 package com.okapi.okapimanager.commands.cheat;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -17,11 +18,13 @@ public class Commandjump extends BaseCommand{
 	@Override
 	public void Run(Player player, Server server, String[] args){
 		if(player.getTargetBlock(null, 150).getType() == Material.AIR){
-			player.sendMessage(ChatColor.RED + "You can't teleport to air!");
+			player.sendMessage(formatMessage("You have to teleport to a block!"));
 			return;
 		}
 		
-		player.teleport(player.getTargetBlock(null, 150).getLocation());
+		Location jumpLocation = player.getTargetBlock(null, 150).getLocation().add(0, 1, 0);
+		
+		player.teleport(jumpLocation);
 		player.sendMessage(ChatColor.YELLOW + "Wooooosh!");
 	}
 }

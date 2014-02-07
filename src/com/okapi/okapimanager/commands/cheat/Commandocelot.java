@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
@@ -24,7 +23,7 @@ public class Commandocelot extends BaseCommand{
 			Player p = server.getPlayer(args[0]);
 			
 			if(p == null){
-				sender.sendMessage(ChatColor.RED + "That player is not online!");
+				sender.sendMessage(formatError("That player is not online!"));
 				return;
 			}
 			
@@ -38,8 +37,8 @@ public class Commandocelot extends BaseCommand{
 				}
 			}
 			
-			sender.sendMessage(ChatColor.YELLOW + "You have spawned a tamed ocelot for " + p.getName() + "!");
-			p.sendMessage(ChatColor.YELLOW + "The server has spawned a tamed ocelot for you!");
+			sender.sendMessage(formatMessage("An ocelote has been spawned for " + p.getName() + "!"));
+			p.sendMessage(formatMessage("An ocelote has been spawned for you by the server!"));
 		}
 	}
 	
@@ -56,12 +55,12 @@ public class Commandocelot extends BaseCommand{
 				}
 			}
 			
-			player.sendMessage(ChatColor.YELLOW + "You have spawned a tamed wolf!");
+			player.sendMessage(formatMessage("An ocelote has been spawned!"));
 		} else if(args.length == 1) {
 			Player p = server.getPlayer(args[0]);
 			
 			if(p == null){
-				player.sendMessage(ChatColor.RED + "That player is not online!");
+				player.sendMessage(formatError("That player is not online!"));
 				return;
 			}
 			
@@ -75,8 +74,8 @@ public class Commandocelot extends BaseCommand{
 				}
 			}
 			
-			player.sendMessage(ChatColor.YELLOW + "You have spawned a tamed ocelot for " + p.getName() + "!");
-			p.sendMessage(ChatColor.YELLOW + player.getName() + " has spawned a tamed ocelot for you!");
+			player.sendMessage(formatMessage("An ocelote has been spawned for " + p.getName() + "!"));
+			p.sendMessage(formatMessage("An ocelote has been spawned for you by " + player.getName() + "!"));
 		}
 	}
 }

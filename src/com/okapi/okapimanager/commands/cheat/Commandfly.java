@@ -19,22 +19,22 @@ public class Commandfly extends BaseCommand{
 			if(player.isFlying()){
 				player.setAllowFlight(false);
 				player.setFlying(false);
-				player.sendMessage(ChatColor.YELLOW + "Your flying has been disabled!");
+				player.sendMessage(formatMessage("Flymode activated. Ready for lift-off!"));
 			} else {
 				player.setAllowFlight(true);
 				player.setFlying(true);
-				player.sendMessage(ChatColor.YELLOW + "Your flying has been enabled!");
+				player.sendMessage(formatMessage("Flymode deactivated. Prepare to land!"));
 			}
 		} else if(args.length == 1){
 			if(args[0].equalsIgnoreCase("on") || args[0].equalsIgnoreCase("enable") || args[0].equalsIgnoreCase("true")){
 				player.setAllowFlight(false);
 				player.setFlying(false);
-				player.sendMessage(ChatColor.YELLOW + "Your flying has been disabled!");
+				player.sendMessage(formatMessage("Flymode deactivated. Prepare to land!"));
 				return;
 			} else if(args[0].equalsIgnoreCase("off") || args[0].equalsIgnoreCase("disable") || args[0].equalsIgnoreCase("false")){
 				player.setAllowFlight(true);
 				player.setFlying(true);
-				player.sendMessage(ChatColor.YELLOW + "Your flying has been enabled!");
+				player.sendMessage(formatMessage("Flymode activated. Ready for lift-off!"));
 				return;
 			}
 			
@@ -48,12 +48,12 @@ public class Commandfly extends BaseCommand{
 			if(p.isFlying()){
 				p.setAllowFlight(false);
 				p.setFlying(false);
-				p.sendMessage(ChatColor.YELLOW + "Your flying has been disabled!");
+				p.sendMessage(formatMessage("Flymode deactivated. Prepare to land!"));
 				player.sendMessage(ChatColor.YELLOW + "You have disabled flying for " + p.getName() + "!");
 			} else {
 				p.setAllowFlight(true);
 				p.setFlying(true);
-				p.sendMessage(ChatColor.YELLOW + "Your flying has been enabled!");
+				p.sendMessage(formatMessage("Flymode activated. Ready for lift-off!"));
 				player.sendMessage(ChatColor.YELLOW + "You have enabled flying for " + p.getName() + "!");
 			}
 		}

@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -36,7 +35,7 @@ public class Commanditem extends BaseCommand{
 			try {
 				amount = Integer.parseInt(args[1]);
 			} catch(NumberFormatException ex){
-				player.sendMessage(ChatColor.RED + "Enter a valid amount!");
+				player.sendMessage(formatError("Enter a valid amount!"));
 				return;
 			}
 			
@@ -56,6 +55,6 @@ public class Commanditem extends BaseCommand{
 	
 	public void spawnItem(Player player, MaterialData mat, int amount){
 		player.getInventory().addItem(mat.toItemStack(amount));
-		player.sendMessage(ChatColor.YELLOW + "You spawned " + amount + " of " + mat.toString() + "!");
+		player.sendMessage(formatMessage("You spawned " + amount + " of " + mat.toString() + "!"));
 	}
 }

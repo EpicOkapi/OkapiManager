@@ -19,18 +19,18 @@ public class Commandlongarms extends BaseCommand{
 		if(args.length == 0) {
 			PlayerSettings settings = plugin.getPlayerSettings(player.getName());
 			
-			if(settings.isGod()){
+			if(settings.isLongArms()){
 				settings.setLongArms(false);
-				player.sendMessage(ChatColor.YELLOW + "You turned off longarms!");
+				player.sendMessage(formatMessage("Longarms has been deactivated!"));
 			} else {
 				settings.setLongArms(true);
-				player.sendMessage(ChatColor.YELLOW + "You turned on longarms!");
+				player.sendMessage(formatMessage("Longarms has been activated!"));
 			}
 		} else if(args.length == 1){
 			Player p = server.getPlayer(args[0]);
 			
 			if(p == null){
-				player.sendMessage(ChatColor.RED + "That player is not online!");
+				player.sendMessage(formatError("That player is not online!"));
 				return;
 			}
 			
@@ -38,12 +38,12 @@ public class Commandlongarms extends BaseCommand{
 			
 			if(settings.isLongArms()){
 				settings.setLongArms(false);
-				p.sendMessage(ChatColor.YELLOW + player.getName() + " has turned off your longarms!");
-				player.sendMessage(ChatColor.YELLOW + "You turned off longarms for " + p.getName() + "!");
+				p.sendMessage(formatMessage("Longarms has been deactivated for you by " + player.getName() + "!"));
+				player.sendMessage(ChatColor.YELLOW + "You deactivated longarms for " + p.getName() + "!");
 			} else {
 				settings.setLongArms(true);
-				p.sendMessage(ChatColor.YELLOW + player.getName() + " has turned on your longarms!");
-				player.sendMessage(ChatColor.YELLOW + "You turned on godmode for " + p.getName() + "!");
+				p.sendMessage(formatMessage("Longarms has been activated for you by " + player.getName() + "!"));
+				player.sendMessage(ChatColor.YELLOW + "You activated longarms for " + p.getName() + "!");
 			}
 		}
 	}

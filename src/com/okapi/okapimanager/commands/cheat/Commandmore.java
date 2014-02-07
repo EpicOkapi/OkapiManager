@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.cheat;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 
@@ -17,6 +16,6 @@ public class Commandmore extends BaseCommand{
 	public void Run(Player player, Server server, String[] args){
 		player.getItemInHand().setAmount(player.getItemInHand().getType().getMaxStackSize());
 		
-		player.sendMessage(ChatColor.YELLOW + "You got a full stack of " + player.getItemInHand().getType().name() + "!");
+		player.sendMessage(formatMessage("Your stack of " + player.getItemInHand().getType().name() + " has been maxed out!"));
 	}
 }

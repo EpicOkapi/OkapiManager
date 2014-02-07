@@ -18,7 +18,7 @@ public class Commandhelpop extends BaseCommand{
 		String msg = ChatColor.YELLOW + "Help request from " + player.getName() + ": ";
 		
 		for(int i = 0; i < args.length; i++){
-			msg += args + " ";
+			msg += args[i] + " ";
 		}
 		
 		boolean foundOP = false;

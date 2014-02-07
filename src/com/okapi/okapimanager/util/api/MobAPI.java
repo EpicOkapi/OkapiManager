@@ -25,13 +25,13 @@ public class MobAPI {
 	}
 	
 	public static EntityType StringToEntity(String str){
-		EntityType entity = EntityType.fromName(str.toUpperCase());
+		EntityType entity = EntityType.valueOf(str.toUpperCase());
 		
 		if(entity != null){
 			return entity;
 		}
 		
-		entity = EntityType.fromName(str.toLowerCase().replace("_", ""));
+		entity = EntityType.valueOf(str.toLowerCase().replace("_", ""));
 		
 		if(entity != null){
 			return entity;

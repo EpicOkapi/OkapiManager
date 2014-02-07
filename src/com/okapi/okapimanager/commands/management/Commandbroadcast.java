@@ -19,7 +19,7 @@ public class Commandbroadcast extends BaseCommand{
 		String msg = ChatColor.WHITE + " ";
 		
 		for(int i = 0; i < args.length; i++){
-			msg += args + " ";
+			msg += args[i] + " ";
 		}
 		
 		server.broadcastMessage(ChatColor.WHITE + "[" + ChatColor.DARK_PURPLE + "BROADCAST" + ChatColor.WHITE + "] " + msg);
@@ -30,7 +30,7 @@ public class Commandbroadcast extends BaseCommand{
 		String msg = ChatColor.WHITE+ " ";
 		
 		for(int i = 0; i < args.length; i++){
-			msg += args + " ";
+			msg += args[i] + " ";
 		}
 		
 		server.broadcastMessage(ChatColor.WHITE + "[" + ChatColor.DARK_PURPLE + "BROADCAST" + ChatColor.WHITE + "] " + msg);

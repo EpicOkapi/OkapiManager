@@ -24,7 +24,7 @@ public class Commandkill extends BaseCommand{
 				return;
 			}
 			
-			p.damage(20);
+			p.damage(20.0);
 			p.sendMessage(ChatColor.YELLOW + "You got killed by the server!");
 			sender.sendMessage(ChatColor.YELLOW + "You have killed " + p.getName() + "!");
 		}
@@ -33,7 +33,7 @@ public class Commandkill extends BaseCommand{
 	@Override
 	public void Run(Player player, Server server, String[] args){
 		if(args.length == 0){
-			player.damage(20);
+			player.damage(20.0);
 			player.sendMessage(ChatColor.YELLOW + "You have commited suicide!");
 		} else if(args.length == 1){
 			Player p = server.getPlayer(args[0]);
@@ -48,7 +48,7 @@ public class Commandkill extends BaseCommand{
 				return;
 			}
 			
-			p.damage(20);
+			p.damage(20.0);
 			p.sendMessage(ChatColor.YELLOW + "You got killed by " + player.getName() + "!");
 			player.sendMessage(ChatColor.YELLOW + "You have killed " + p.getName() + "!");
 		}
