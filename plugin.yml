@@ -1,0 +1,247 @@
+main: com.okapi.okapimanager.OkapiManager
+name: OkapiManager
+version: 1.1.1
+description: OkapiManager
+author: Okapi
+softdepend: [VanishNoPacket, PermissionsBukkit]
+commands:
+  ping:
+    description: Dummy Command
+  setborder:
+    description: Change the border location
+  top:
+    description: Teleports you to the highest position
+  spawn:
+    description: Teleports you to spawn
+  setspawn:
+    description: Sets a new spawn location
+  tp:
+    description: Teleport to another player
+    aliases: teleport
+  home:
+    description: Teleports you to your home
+  sethome:
+    description: Sets your home at your current location
+  heal:
+    description: Heal yourself
+  ban:
+    description: Ban players
+  item:
+    description: Spawn items
+    aliases: [i, give]
+  armor:
+    description: Spawn armor
+  serverinfo:
+    description: Get server info
+  biome:
+    description: Change biome
+  time:
+    description: Change the time
+  weather:
+    description: Change the weather
+  warp:
+    description: Warp to location
+  setwarp:
+    description: Set a new warp
+  delwarp:
+    description: Delete a warp
+  back:
+    description: Teleport back
+  pvp:
+    description: Toggle pvp
+  enchant:
+    description: Enchant your item
+  eat:
+    description: Heal your hunger bar
+    aliases: feed
+  gamemode:
+    description: Change your gamemode
+    aliases: gm
+  god:
+    description: Toggle godmode
+  more:
+    description: Get a full stack
+  spawnmob:
+    description: Spawn a mob
+  spawner:
+    description: Change spawner type
+  tpall:
+    description: Teleport all players to you
+  tphere:
+    description: Teleport other player to you
+  kick:
+    description: Kick a player from the server
+  message:
+    description: Send a private message to another player
+    aliases: [msg, tell, whisper]
+  up:
+    description: Teleports you to the floor above you
+  down:
+    description: Teleports you to the floor below you
+  status:
+    description: Shows a players status
+    aliases: whois
+  mute:
+    description: Mute a player
+  unmute:
+    description: Unmute a player
+  unban:
+    description: Unban a player
+  banip:
+    description: Ban an ip address
+  unbanip:
+    description: Unban an ip address
+  burn:
+    description: Put someone one fire
+  wolf:
+    description: Spawn a tamed wolf
+  tppos:
+    description: Teleport to a location
+    aliases: tploc
+  world:
+    description: Teleport to another world
+  jump:
+    description: Jump to a location
+  lastonline:
+    description: Check when a player was last online
+    aliases: seen
+  near:
+    description: Check near players
+  tptoggle:
+    description: Toggle teleporting
+  unlimited:
+    description: Toggle unlimited blocks
+    aliases: ul
+  balance:
+    description: View your balance
+    aliases: [bal, money, cash]
+  whitelist:
+    description: Change whitelist settings
+  ocelot:
+    description: Spawn a tamed ocelot
+  break:
+    description: Break the block you target
+  fly:
+    description: Allows flying
+  repair:
+    description: Repair items
+  afk:
+    description: Toggles afk
+  compass:
+    description: Shows your direction
+    aliases: [direction, dir]
+  getpos:
+    description: Shows your position
+    aliases: [coords, position]
+  helpop:
+    description: Get help from an op
+    aliases: reqhelp
+  me:
+    description: Allow you to emote
+    aliases: [emote, action, describe]
+  reply:
+    description: Reply to the latest message you got
+  broadcast:
+    description: Broadcast a message
+    aliases: bc
+  clearinventory:
+    description: Clear your inventory
+    aliases: [clearinv, ci]
+  conversation:
+    description: Have a conversation
+    aliases: [conv, c]
+  experience:
+    description: Give yourself xp
+    aliases: [xp, exp]
+  workbench:
+    description: Shows a workbench
+    aliases: wb
+  flyspeed:
+    description: Change your flight speed
+    aliases: fs
+  bind:
+    description: Bind a command
+  clearchat:
+    description: Clear the chat
+    aliases: clear
+  instantkill:
+    description: Instantly kill mobs
+    aliases: ik
+  instantmine:
+    description: Instantly mine blocks
+    aliases: im
+  fireball:
+    description: Fire a ghasts fireball
+  plugin:
+    description: Manage plugins
+  explode:
+    description: Explode your target
+  forcesay:
+    description: Force a player to say something
+  hat:
+    description: Give yourself a block hat
+  calculator:
+    description: Simple calculator
+    aliases: calc
+  pay:
+    description: Pay another player
+  chunk:
+    description: Shows chunk information
+  kill:
+    description: Kill someone
+    aliases: suicide
+  list:
+    description: Show all players online
+  jail:
+    description: Jail a person
+  unjail:
+    description: Unjail a person
+  deljail:
+    description: Delete a jail location
+  setjail:
+    description: Add a new jail
+  longarms:
+    description: Lets you reach further
+  recipe:
+    description: Shows an items recipe!
+  roll:
+    description: Roll a random number
+  vanish:
+    description: Vanish the player
+  kickall:
+    description: Kick everyone from the server
+  anvil:
+    description: Open an anvil
+  lock:
+    description: Locks down the server
+    aliases: lockdown
+  sudo:
+    description: Uses a command for a player
+  pos1:
+    description: Set your first position
+  pos2:
+    description: Set your second position
+  hpos1:
+    description: Set your first position in the distance
+  hpos2:
+    description: Set your second position in the distance
+  wand:
+    description: Spawn a wand
+  expand:
+    description: Expand the selected area
+  set:
+    description: Change all blocks in the region
+  replace:
+    description: Replace all selected blocks in the region
+  count:
+    description: Count the amount blocks with the selected type
+  cube:
+    description: Generate a cube
+  floor:
+    description: Change the floor blocks in the region
+  outline:
+    description: Change the outline of the region
+  overlay:
+    description: Change the roof blocks in the region
+  walls:
+    description: Change the blocks in the wall region
