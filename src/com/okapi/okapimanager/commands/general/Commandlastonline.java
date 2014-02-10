@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.general;
 
-import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
@@ -20,7 +19,7 @@ public class Commandlastonline extends BaseCommand{
 		if(args.length == 1){
 			OfflinePlayer p = server.getOfflinePlayer(args[0]);
 			
-			sender.sendMessage(ChatColor.YELLOW + "This player was last seen on " + p.getLastPlayed());
+			sender.sendMessage(formatMessage("This player was last seen on " + p.getLastPlayed()));
 		}
 	}
 	
@@ -29,7 +28,7 @@ public class Commandlastonline extends BaseCommand{
 		if(args.length == 1){
 			OfflinePlayer p = server.getOfflinePlayer(args[0]);
 			
-			player.sendMessage(ChatColor.YELLOW + "This player was last seen on " + p.getLastPlayed());
+			player.sendMessage(formatMessage("This player was last seen on " + p.getLastPlayed()));
 		}
 	}
 }

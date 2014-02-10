@@ -1,6 +1,5 @@
 package com.okapi.okapimanager.commands.general;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,7 +15,7 @@ public class Commandlist extends BaseCommand{
 
 	@Override
 	public void Run(CommandSender sender, Server server, String[] args){
-		String msg = ChatColor.YELLOW + "Online Players: ";
+		String msg = formatMessage("Online Players: ");
 		
 		for(Player p : server.getOnlinePlayers()){
 			msg += p.getName();
@@ -33,7 +32,7 @@ public class Commandlist extends BaseCommand{
 	
 	@Override
 	public void Run(Player player, Server server, String[] args){
-		String msg = ChatColor.YELLOW + "Online Players: ";
+		String msg = formatMessage("Online Players: ");
 		
 		for(Player p : server.getOnlinePlayers()){
 			if(!plugin.isVanished(p)){

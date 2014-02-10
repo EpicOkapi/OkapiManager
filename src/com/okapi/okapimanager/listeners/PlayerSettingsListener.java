@@ -10,6 +10,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 
 import com.okapi.okapimanager.OkapiManager;
@@ -47,6 +48,14 @@ public class PlayerSettingsListener extends BaseListener {
 		
 		settings.setBack(player.getLocation());
 		player.sendMessage(ChatColor.YELLOW + "Use /back to teleport back to the location you died!");
+	}
+	
+	@EventHandler
+	public void onPlayerTeleport(PlayerTeleportEvent event){
+		Player player = event.getPlayer();
+		PlayerSettings settings = plugin.getPlayerSettings(player.getName());
+		
+		settings.setBack(player.getLocation());
 	}
 	
 	@EventHandler

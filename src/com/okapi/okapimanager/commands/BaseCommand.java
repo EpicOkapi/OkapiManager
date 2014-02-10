@@ -1,5 +1,7 @@
 package com.okapi.okapimanager.commands;
 
+import java.util.List;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.block.Sign;
@@ -51,5 +53,43 @@ public abstract class BaseCommand implements CommandExecutor{
 	
 	protected String formatError(String msg){
 		return "[" + ChatColor.GREEN + "OkapiManager" + ChatColor.RESET + "] " + ChatColor.RED + msg;
+	}
+	
+	protected String formatList(String[] items){
+		String formattedList = "";
+		
+		if(items.length == 0){
+			return formattedList;
+		}
+		
+		for(int i = 0; i < items.length; i++){
+			formattedList += items[i];
+			
+			if(i != (items.length - 1)){
+				formattedList += ", ";
+			} else {
+				formattedList += ".";
+			}
+		}
+		
+		return formattedList;
+	}
+	
+	protected String formatList(List<String> items){
+		return formatList((String[]) items.toArray());
+	}
+	
+	protected String formatParametersToMessage(String[] items){
+		String message = "";
+		
+		for(int i = 0; i < items.length; i++){
+			message += items[i];
+			
+			if(i != (items.length - 1)){
+				message += " ";
+			}
+		}
+		
+		return message;
 	}
 }

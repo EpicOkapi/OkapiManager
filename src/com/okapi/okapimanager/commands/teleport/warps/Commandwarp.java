@@ -19,11 +19,7 @@ public class Commandwarp extends BaseCommand{
 	public void Run(Player player, Server server, String[] args){
 		if(args.length == 0){
 			LocationSettings settings = plugin.getWarpSettings(player.getWorld().getName());
-			String message = "Warps: ";
-				
-			for(String str : settings.locations.keySet()){
-				message += str + ",";
-			}
+			String message = formatMessage("Warps: " + formatList((String[])settings.locations.keySet().toArray()));
 				
 			player.sendMessage(message);
 		} else if(args.length == 1){

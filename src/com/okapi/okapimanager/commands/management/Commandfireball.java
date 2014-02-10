@@ -1,5 +1,6 @@
 package com.okapi.okapimanager.commands.management;
 
+import org.bukkit.Location;
 import org.bukkit.Server;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;
@@ -16,7 +17,8 @@ public class Commandfireball extends BaseCommand{
 	
 	@Override
 	public void Run(Player player, Server server, String[] args){
-		Fireball fireball = (Fireball)player.getWorld().spawnEntity(player.getLocation(), EntityType.FIREBALL);
+		Location spawnLocation = player.getLocation().add(player.getLocation().getDirection());
+		Fireball fireball = (Fireball)player.getWorld().spawnEntity(spawnLocation, EntityType.FIREBALL);
 		fireball.setDirection(player.getLocation().getDirection());
 	}
 }

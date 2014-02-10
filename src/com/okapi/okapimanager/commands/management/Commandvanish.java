@@ -22,6 +22,8 @@ public class Commandvanish extends BaseCommand{
 						p.hidePlayer(player);
 					}
 				}
+
+				plugin.getVanishedPlayers().add(player.getName());
 				
 				server.broadcastMessage(ChatColor.YELLOW + player.getName() + " went offline!");
 				player.sendMessage(ChatColor.YELLOW + "You are now vanished!");
@@ -29,6 +31,8 @@ public class Commandvanish extends BaseCommand{
 				for(Player p : server.getOnlinePlayers()){
 					p.showPlayer(player);
 				}
+				
+				plugin.getVanishedPlayers().remove(player.getName());
 				
 				server.broadcastMessage(ChatColor.YELLOW + player.getName() + " came online!");
 				player.sendMessage(ChatColor.YELLOW + "You are now visible!");
@@ -40,13 +44,9 @@ public class Commandvanish extends BaseCommand{
 					return;
 				}
 				
-				String msg = "Vanish Players: ";
+				String msg = formatMessage("Vanish Players: " + formatList(plugin.getVanishedPlayers()));
 				
-				for(String str : plugin.getVanishedPlayers()){
-					msg += str + ", ";
-				}
-				
-				player.sendMessage(ChatColor.YELLOW + msg);
+				player.sendMessage(msg);
 			} else if(args[0].equalsIgnoreCase("fakeoffline") || args[0].equalsIgnoreCase("offline")){
 				if(!player.hasPermission("OkapiManager.vanish.fakeoffline")){
 					player.sendMessage(ChatColor.RED + "You don't have permission to do that!");
@@ -60,7 +60,7 @@ public class Commandvanish extends BaseCommand{
 					return;
 				}
 				
-				server.broadcastMessage(ChatColor.YELLOW + player.getName() + " went offline!");
+				server.broadcastMessage(ChatColor.YELLOW + player.getName() + " came online!");
 			}
 		}
 	}
